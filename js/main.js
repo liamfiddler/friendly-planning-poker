@@ -2,6 +2,7 @@ const card = document.querySelector('.card')
 const cardValue = card.querySelector('.value')
 const cardDesc = card.querySelector('.desc')
 const hammer = new Hammer(card)
+const flipClass = 'flipped'
 
 const values = [
   {
@@ -69,7 +70,7 @@ const values = [
 let valueIndex = 1
 
 const flipCard = () => {
-  card.classList.toggle('flipped')
+  card.classList.toggle(flipClass)
 
   if ('vibrate' in navigator) {
     navigator.vibrate(300)
@@ -77,6 +78,10 @@ const flipCard = () => {
 }
 
 const updateCardValue = (increment = true) => {
+  if (card.classList.contains(flipClass)) {
+    return // prevent card value changing when flipped
+  }
+
   valueIndex += increment ? 1 : -1
 
   if (valueIndex >= values.length) {
