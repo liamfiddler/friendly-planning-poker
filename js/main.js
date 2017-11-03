@@ -92,7 +92,7 @@ const updateCardValue = (increment = true) => {
 }
 
 (new Shake({
-  threshold: 15, // shake strength threshold
+  threshold: 10, // shake strength threshold
   timeout: 1000 // frequency of event generation
 })).start()
 
