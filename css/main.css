@@ -47,6 +47,7 @@ body {
   border-radius: .5em;
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .card .front {
