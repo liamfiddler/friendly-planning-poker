@@ -99,6 +99,5 @@ const updateCardValue = (increment = true) => {
 window.addEventListener('shake', flipCard)
 hammer.on('swipeleft', e => updateCardValue(true))
 hammer.on('swiperight', e => updateCardValue(false))
-hammer.on('doubletap', flipCard)
 
 updateCardValue(true)
