@@ -1,10 +1,17 @@
 html,
 body {
-  height: 100%;
   --primary: #25D5B9;
+  --dark: #131E32;
+  --light: #fbfbfb;
   --bg-light: #b5bdc8;
   --bg-dark: #28343b;
-  --bg-card: #fbfbfb;
+  --bg-card: var(--light);
+
+  height: 100%;
+  color: var(--dark);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  letter-spacing: .08em;
 }
 
 *,
@@ -29,10 +36,10 @@ body {
 }
 
 .container {
-  width: 250px;
-  height: 340px;
+  width: 30rem;
+  height: 40rem;
   position: relative;
-  perspective: 800px;
+  perspective: 60em;
 }
 
 .card {
@@ -43,20 +50,20 @@ body {
   transform-style: preserve-3d;
 }
 
-.card div {
+.card > div {
   display: block;
   height: 100%;
   width: 100%;
-  color: var(--bg-light);
   text-align: center;
   border-radius: .5em;
   position: absolute;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  background: var(--bg-card);
+  overflow: hidden;
 }
 
-.card .front {
-  background: var(--bg-card);
+.card * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .card .back {
@@ -80,17 +87,93 @@ body {
 }
 
 .card .value {
-  color: var(--bg-light);
-  font-weight: bold;
-  font-size: 140px;
+  display: block;
+  text-align: right;
+  font-size: 34em;
+  line-height: 36rem;
+  letter-spacing: -4.5rem;
   position: absolute;
-  top: 50%;
-  margin-top: -.7em;
+  right: 1rem;
+  bottom: 0;
+}
+
+.card[data-value='100'] .value,
+.card[data-value='120'] .value {
+  font-size: 25em;
+  letter-spacing: -4.5rem;
+  line-height: 31rem;
+}
+
+.card[data-value^='1'] .value::first-letter {
+  letter-spacing: -5.5rem;
+}
+
+.card[data-value='∞'] .value {
+  font-size: 35em;
+  padding-right: .03em;
+}
+
+.card .countainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  background: var(--dark);
+  font-size: 4em;
+}
+
+.card .count {
+  display: inline-block;
+  text-align: center;
+  word-wrap: break-word;
+  width: 4em;
+  line-height: .5em;
+  color: var(--primary);
+}
+
+.card[data-value='16'] .count,
+.card[data-value='24'] .count {
+  font-size: .85em;
+}
+
+.card[data-value='40'] .count,
+.card[data-value='60'] .count {
+  font-size: .6em;
+  width: 9em;
+}
+
+.card[data-value='80'] .count,
+.card[data-value='100'] .count,
+.card[data-value='120'] .count {
+  font-size: .6em;
+  width: 11em;
 }
 
 .card .desc {
-  font-family: sans-serif;
-  color: var(--bg-dark);
+  font-size: 1.4em;
+  width: 30rem;
+  padding-right: 2rem;
+  color: var(--dark);
+  text-align: right;
+  transform-origin: right top 0;
+  transform: rotate(-90deg);
   position: absolute;
-  top: calc(50% + 3em);
+  top: 0;
+  left: 0;
+  margin-left: -28.5rem;
+}
+
+.card .desc:after {
+  content: '';
+  position: absolute;
+  top: 110%;
+  right: 2.1rem;
+  display: block;
+  width: 3em;
+  border-bottom: .2em solid var(--primary);
 }

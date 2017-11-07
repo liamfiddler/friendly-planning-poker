@@ -1,12 +1,13 @@
 const card = document.querySelector('.card')
 const cardValue = card.querySelector('.value')
+const cardCount = card.querySelector('.count')
 const cardDesc = card.querySelector('.desc')
 const hammer = new Hammer(card)
 const flipClass = 'flipped'
 
 const values = [{
   value: '0',
-  desc: 'already done',
+  desc: 'no work required',
 },
 {
   value: '½',
@@ -42,7 +43,7 @@ const values = [{
 },
 {
   value: '60',
-  desc: 'week and a half',
+  desc: 'week & a half',
 },
 {
   value: '80',
@@ -50,7 +51,7 @@ const values = [{
 },
 {
   value: '100',
-  desc: 'sprint and a half',
+  desc: 'sprint & a half',
 },
 {
   value: '120',
@@ -90,8 +91,18 @@ const updateCardValue = (increment = true) => {
 
   const current = values[valueIndex]
 
+  card.dataset.value = current.value
   cardValue.innerHTML = current.value
   cardDesc.innerHTML = current.desc
+
+  let countVal = ''
+  const countNum = parseInt(current.value)
+
+  for (let i = 0; i < countNum; i++) {
+    countVal += '•'
+  }
+
+  cardCount.innerHTML = countVal || '~'
 }
 
 (new Shake({
