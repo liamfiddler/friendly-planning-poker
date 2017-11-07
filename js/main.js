@@ -1,71 +1,70 @@
 const card = document.querySelector('.card')
 const cardValue = card.querySelector('.value')
+const cardCount = card.querySelector('.count')
 const cardDesc = card.querySelector('.desc')
 const hammer = new Hammer(card)
 const flipClass = 'flipped'
 
-const values = [
-  {
-    value: '0',
-    desc: 'already done',
-  },
-  {
-    value: '½',
-    desc: 'half an hour',
-  },
-  {
-    value: '1',
-    desc: 'an hour',
-  },
-  {
-    value: '2',
-    desc: 'two hours',
-  },
-  {
-    value: '4',
-    desc: 'half a day',
-  },
-  {
-    value: '8',
-    desc: 'a day',
-  },
-  {
-    value: '16',
-    desc: 'two days',
-  },
-  {
-    value: '24',
-    desc: 'three days',
-  },
-  {
-    value: '40',
-    desc: 'a week',
-  },
-  {
-    value: '60',
-    desc: 'week and a half',
-  },
-  {
-    value: '80',
-    desc: 'a sprint',
-  },
-  {
-    value: '100',
-    desc: 'sprint and a half',
-  },
-  {
-    value: '120',
-    desc: 'two sprints',
-  },
-  {
-    value: '∞',
-    desc: 'ongoing',
-  },
-  {
-    value: '?',
-    desc: 'unestimateable',
-  },
-]
+const values = [{
+  value: '0',
+  desc: 'no work required',
+},
+{
+  value: '½',
+  desc: 'half an hour',
+},
+{
+  value: '1',
+  desc: 'an hour',
+},
+{
+  value: '2',
+  desc: 'two hours',
+},
+{
+  value: '4',
+  desc: 'half a day',
+},
+{
+  value: '8',
+  desc: 'a day',
+},
+{
+  value: '16',
+  desc: 'two days',
+},
+{
+  value: '24',
+  desc: 'three days',
+},
+{
+  value: '40',
+  desc: 'a week',
+},
+{
+  value: '60',
+  desc: 'week & a half',
+},
+{
+  value: '80',
+  desc: 'a sprint',
+},
+{
+  value: '100',
+  desc: 'sprint & a half',
+},
+{
+  value: '120',
+  desc: 'two sprints',
+},
+{
+  value: '∞',
+  desc: 'ongoing',
+},
+{
+  value: '?',
+  desc: 'unestimateable',
+}]
 
 let valueIndex = 1
 
@@ -92,8 +91,18 @@ const updateCardValue = (increment = true) => {
 
   const current = values[valueIndex]
 
+  card.dataset.value = current.value
   cardValue.innerHTML = current.value
   cardDesc.innerHTML = current.desc
+
+  let countVal = ''
+  const countNum = parseInt(current.value)
+
+  for (let i = 0; i < countNum; i++) {
+    countVal += '•'
+  }
+
+  cardCount.innerHTML = countVal || '~'
 }
 
 (new Shake({
@@ -102,6 +111,7 @@ const updateCardValue = (increment = true) => {
 })).start()
 
 window.addEventListener('shake', flipCard)
+hammer.on('press', flipCard)
 hammer.on('swipeleft', e => updateCardValue(true))
 hammer.on('swiperight', e => updateCardValue(false))
 
