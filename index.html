@@ -35,6 +35,16 @@
   <script src="https://cdn.jsdelivr.net/npm/shake.js@v1.2.2/shake.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@v2.0.8/hammer.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function (reg) {
+          // service worker registered
+        }).catch(function (err) {
+          // service worker failed to register
+        });
+    }
+  </script>
 </body>
 
 </html>

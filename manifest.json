@@ -1,5 +1,6 @@
 {
-    "name": "Planning Poker",
+    "name": "Mentally Friendly Planning Poker",
+    "short_name": "Planning Poker",
     "icons": [
         {
             "src": "img/android-chrome-192x192.png",
