@@ -177,3 +177,33 @@ body {
   width: 3em;
   border-bottom: .2em solid var(--primary);
 }
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 270px) {
+  html {
+    font-size: 6px;
+  }
+}
