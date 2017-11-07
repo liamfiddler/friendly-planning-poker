@@ -109,7 +109,6 @@ body {
 }
 
 .card[data-value='∞'] .value {
-  font-size: 35em;
   padding-right: .03em;
 }
 
