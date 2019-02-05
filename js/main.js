@@ -50,11 +50,11 @@ const values = [{
   desc: 'a sprint',
 },
 {
-  value: '100',
+  value: '120',
   desc: 'sprint & a half',
 },
 {
-  value: '120',
+  value: '160',
   desc: 'two sprints',
 },
 {
