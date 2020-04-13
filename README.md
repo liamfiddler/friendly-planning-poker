@@ -2,9 +2,23 @@
 
 Mentally Friendly's Agile Planning Poker card webapp
 
+Built using [Docker](https://docker.com), [MongoDB](https://mongodb.com), and [lit-html](https://lit-html.polymer-project.org/).
+
+## Local development
+
+Install & run [Docker](https://docker.com) then:
+
+```
+npm install
+docker-compose up
+# The server should now be running on http://localhost/ 🎉
+```
+
+The [server.js](./server.js) file and [api directory](./api) contain the server logic, while the front-end content lives in the [static directory](./static).
+
 ## Deployment
 
-This project is hosted on GitHub using GitHub Pages.
+TBD.
 
 ## Contributing
 
