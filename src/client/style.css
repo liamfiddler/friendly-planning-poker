@@ -68,3 +68,14 @@ body {
     -webkit-transform: scaleY(1.0);
   }
 }
+
+.players {
+  background: #efefef;
+  padding: 2rem;
+  display: flex;
+}
+
+.player {
+  width: 100%;
+  border: 1px solid grey;
+}

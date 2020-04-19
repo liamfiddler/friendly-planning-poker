@@ -1,27 +1,15 @@
 version: '3'
 services:
   node:
-    container_name: planningpoker-web
+    container_name: planningpoker-app
     image: 'node:12.9-alpine'
     restart: always
     user: 'node'
     working_dir: /home/node/app
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=${NODE_ENV:-production}
     volumes:
       - ./:/home/node/app
     ports:
       - 80:8080
-    command: 'npm start'
-    depends_on:
-      - db
-  db:
-    container_name: planningpoker-db
-    image: mongo
-    restart: always
-    expose:
-      - 27017
-    volumes:
-      - planningpoker-db-volume:/data/db
-volumes:
-  planningpoker-db-volume:
+    command: 'npm run serve:${NODE_ENV:-production}'
