@@ -5,19 +5,44 @@
   "private": true,
   "main": "src/server.js",
   "scripts": {
+    "postinstall": "npm run build",
     "start": "NODE_ENV=dev docker-compose up",
     "start:production": "docker-compose up",
-    "serve:production": "node ./src/server.js",
-    "serve:dev": "npx nodemon ./src/server.js",
+    "serve:production": "npm run build && node ./dist/server/server.js",
+    "serve:dev": "npm run watch & npx nodemon --ignore ./src/ --ignore ./dist/client/ ./dist/server/server.js",
+    "build:client": "parcel build src/client/index.html --out-dir dist/client --no-source-maps",
+    "build:server": "parcel build src/server/server.ts --target node --out-dir dist/server --no-source-maps",
+    "build": "npm-run-all --serial build:**",
+    "watch:client": "parcel watch src/client/index.html --out-dir dist/client --hmr-port=1235",
+    "watch:server": "parcel watch src/server/server.ts --target node --out-dir dist/server",
+    "watch": "npm-run-all --parallel watch:**",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@liamfiddler",
   "license": "MIT",
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  },
   "dependencies": {
+    "@types/react-dom": "^16.9.4",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "goober": "^1.6.4",
+    "nodemon": "^2.0.3",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^1.7.0",
+    "preact": "^10.0.5",
+    "socket.io": "^2.3.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.7.2",
+    "use-script": "^2.0.0",
+    "wouter": "^2.4.0"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom": "preact/compat"
+  },
+  "browserslist": [
+    "> 5%"
+  ],
+  "devDependencies": {
+    "@types/node": "^13.13.1",
+    "@types/socket.io": "^2.1.4"
   }
 }

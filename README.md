@@ -1,22 +1,32 @@
 # Agile Planning Poker Cards
 
-Mentally Friendly's Agile Planning Poker card webapp
+> Mentally Friendly's Agile Planning Poker card webapp
 
-Built using [Docker](https://docker.com).
+## Project Team
 
-## Local development
+| Name                                            | Role                |
+|-------------------------------------------------|---------------------|
+| [Liam Fiddler](https://github.com/liamfiddler)  | Designer/Developer  |
 
-Install & run [Docker](https://docker.com) then:
+## Getting Started
+
+The front-end has been built using [Preact](https://preactjs.com/).
+
+The back-end environment is managed via [Docker](https://docker.com).
+
+Real-time communication between the back-and-front-end is handled using [SocketIO](https://socket.io/).
 
 ```
+# Install dependencies
 npm install
-docker-compose up
+
+# Make sure Docker is installed and running, then start the dev environment
+npm start
+
 # The server should now be running on http://localhost/ 🎉
 ```
 
-## Deployment
-
-TBD.
+For a production environment replace `npm start` with `npm run start:production`.
 
 ## Contributing
 
@@ -36,7 +46,7 @@ PR's are even better than issues. We gladly accept community pull requests. In g
 - Submit your PR, making sure it references the issue you opened.
 - If your PR fixes a bug, make sure the issue includes clear steps to reproduce the bug so we can test your fix.
 
-If you've completed all of these steps the core team will do its best to respond to the PR as soon as possible.
+If you've completed all of these steps the core team will do their best to respond to the PR as soon as possible.
 
 ## Communicating with the Mentally Friendly team
 

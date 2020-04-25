@@ -5,10 +5,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Planning Poker Cards</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <planningpoker-app>
+    <div id="app">
       <div class="loading">
         <div class="spinner">
           <div class="rect1"></div>
@@ -18,8 +18,7 @@
           <div class="rect5"></div>
         </div>
       </div>
-    </planningpoker-app>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/components/planningpoker-app.js" type="module"></script>
+    </div>
+    <script src="./App.tsx"></script>
   </body>
 </html>
