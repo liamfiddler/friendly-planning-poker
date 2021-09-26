@@ -98,7 +98,8 @@ body {
 }
 
 .card[data-value='100'] .value,
-.card[data-value='120'] .value {
+.card[data-value='120'] .value,
+.card[data-value='160'] .value {
   font-size: 25em;
   letter-spacing: -4.5rem;
   line-height: 31rem;
@@ -148,7 +149,8 @@ body {
 
 .card[data-value='80'] .count,
 .card[data-value='100'] .count,
-.card[data-value='120'] .count {
+.card[data-value='120'] .count,
+.card[data-value='160'] .count {
   font-size: .6em;
   width: 11em;
 }
