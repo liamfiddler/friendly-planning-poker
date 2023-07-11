@@ -6,6 +6,8 @@ Agile Planning Poker card webapp
 
 This project is hosted on GitHub using GitHub Pages.
 
+https://liamfiddler.github.io/friendly-planning-poker/
+
 ## Contributing
 
 We love contributions from the community!
