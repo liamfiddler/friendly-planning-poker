@@ -1,6 +1,6 @@
 # Agile Planning Poker Cards
 
-Mentally Friendly's Agile Planning Poker card webapp
+Agile Planning Poker card webapp
 
 ## Deployment
 
@@ -8,7 +8,7 @@ This project is hosted on GitHub using GitHub Pages.
 
 ## Contributing
 
-Mentally Friendly loves contributions from the community!
+We love contributions from the community!
 
 ### Filing Bugs
 
@@ -25,13 +25,3 @@ PR's are even better than issues. We gladly accept community pull requests. In g
 - If your PR fixes a bug, make sure the issue includes clear steps to reproduce the bug so we can test your fix.
 
 If you've completed all of these steps the core team will do its best to respond to the PR as soon as possible.
-
-## Communicating with the Mentally Friendly team
-
-Beyond Github, we try to have a variety of different lines of communication available:
-
-- [Website](http://mentallyfriendly.com)
-- [Blog](https://medium.com/@MentallyFriendly)
-- [Facebook](https://www.facebook.com/MentallyFriendly)
-- [Instagram](https://www.instagram.com/mentallyfriendly)
-- [Twitter](https://twitter.com/MF_says)
